@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mEswJgITN7ee+D16r01IVm6hTywF4PGl5Sf6Bqil7/mllNjKnP+B1XQSlFRBuKyMZB3z2yi/aUxRH4N+XWkXAw==",
+  "dgSpecHash": "tAAu7Pq5n/DC2sZp5+Cv6hSL7iQ3t8bIS6ItSsTLZ7TkUU7rP40vKjmNneOZ/eVdkPI4/sQLQL0vYooO5Vzjgg==",
   "success": true,
-  "projectFilePath": "C:\\Grant Advance\\GrantTest\\GrantTest.csproj",
+  "projectFilePath": "C:\\cqs-MediatR-ef\\GrantTest\\GrantTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pichau\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\pichau\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",

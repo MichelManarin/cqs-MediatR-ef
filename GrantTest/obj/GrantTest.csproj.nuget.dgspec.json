@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Grant Advance\\GrantTest\\GrantTest.csproj": {}
+    "C:\\cqs-MediatR-ef\\GrantTest\\GrantTest.csproj": {}
   },
   "projects": {
-    "C:\\Grant Advance\\GrantTest\\GrantTest.csproj": {
+    "C:\\cqs-MediatR-ef\\GrantTest\\GrantTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Grant Advance\\GrantTest\\GrantTest.csproj",
+        "projectUniqueName": "C:\\cqs-MediatR-ef\\GrantTest\\GrantTest.csproj",
         "projectName": "GrantTest",
-        "projectPath": "C:\\Grant Advance\\GrantTest\\GrantTest.csproj",
+        "projectPath": "C:\\cqs-MediatR-ef\\GrantTest\\GrantTest.csproj",
         "packagesPath": "C:\\Users\\pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Grant Advance\\GrantTest\\obj\\",
+        "outputPath": "C:\\cqs-MediatR-ef\\GrantTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pichau\\AppData\\Roaming\\NuGet\\NuGet.Config"

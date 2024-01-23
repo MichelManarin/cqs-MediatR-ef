@@ -1,6 +1,7 @@
 using GrantTest.Domain.Commands.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrantTest.Controlers {
 
@@ -8,7 +9,8 @@ namespace GrantTest.Controlers {
   [Route("v1/product")]
   public class ProductController: ControllerBase {
     [HttpGet]
-    [Route("")]
+    [Route("")] 
+    [Authorize]
     public async Task<IActionResult> GetProducts(
       [FromServices]IMediator mediator
     ) {

@@ -14,7 +14,6 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 var configuration = builder.Configuration;
 var secretJWTKey = configuration.GetSection("SecretJWT").Value ?? "";
 var key = Encoding.ASCII.GetBytes(secretJWTKey);
-
 builder.Services.AddAuthentication(x =>
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -26,10 +25,11 @@ builder.Services.AddAuthentication(x =>
         x.SaveToken = true;
         x.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(key),
             ValidateIssuer = false,
-            ValidateAudience = false
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true
         };
     });
 
@@ -51,11 +51,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
 app.UseAuthentication();
-
+app.UseAuthorization();
+app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
