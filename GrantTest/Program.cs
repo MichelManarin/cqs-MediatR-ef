@@ -14,6 +14,13 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 var configuration = builder.Configuration;
 var secretJWTKey = configuration.GetSection("SecretJWT").Value ?? "";
 var key = Encoding.ASCII.GetBytes(secretJWTKey);
+
+builder.Services.AddCors(options => { options.AddPolicy("AllowSpecificOrigin",
+    builder => builder.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+    });
+
 builder.Services.AddAuthentication(x =>
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -33,6 +40,7 @@ builder.Services.AddAuthentication(x =>
         };
     });
 
+builder.Services.AddCors(x => { x.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()); });
 builder.Services.AddControllers();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -51,6 +59,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowSpecificOrigin");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
